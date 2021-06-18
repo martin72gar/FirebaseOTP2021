@@ -52,16 +52,16 @@ public class AuthenticationActivity extends AppCompatActivity {
         btnSendOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtCountryCode.getText().toString().isEmpty()) {
-                    edtCountryCode.setError("Required");
-                    return;
-                }
+//                if(edtCountryCode.getText().toString().isEmpty()) {
+//                    edtCountryCode.setError("Required");
+//                    return;
+//                }
 
                 if(edtPhoneNumber.getText().toString().isEmpty()) {
                     edtPhoneNumber.setError("Required");
                     return;
                 }
-                userPhoneNumber = "+"+edtCountryCode.getText().toString()+edtPhoneNumber.getText().toString();
+                userPhoneNumber = "+62"+edtPhoneNumber.getText().toString();
                 Timber.d("Phone Number : %s", userPhoneNumber);
                 verifyPhoneNumber(userPhoneNumber);
                 Toast.makeText(AuthenticationActivity.this, "OTP sent to "+userPhoneNumber, Toast.LENGTH_SHORT).show();
